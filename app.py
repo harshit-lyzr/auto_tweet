@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 LYZR_API_KEY = os.getenv("LYZR_API_KEY")
+AGENT_ID = os.getenv("AGENT_ID")
 
 # Streamlit page configuration
 st.set_page_config(
@@ -36,7 +37,7 @@ with col1:
                 Agent = LyzrAgent(api_key=LYZR_API_KEY, llm_api_key=OPENAI_API_KEY)
                 with st.spinner("⚙️Executing Your Tasks...."):
                     response = Agent.send_message(
-                        agent_id="66d74bd752ea655ffb69e1ae",
+                        agent_id=AGENT_ID,
                         user_id="7422",
                         session_id="IITV",
                         message=query
@@ -47,7 +48,7 @@ with col1:
                 # Display the response in the second column
                 with col2:
                     st.markdown("## Response:")
-                    st.markdown(f"**Thoughts:**\n\n{response['response']}")
+                    st.markdown(f"**Thoughts:**\n\n{response}")
         else:
             st.warning("Please provide Text")
 
