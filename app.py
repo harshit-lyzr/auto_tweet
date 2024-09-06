@@ -17,8 +17,6 @@ st.set_page_config(
     page_icon="lyzr-logo-cut.png",
 )
 
-# Add banner image at the top
-# st.image("/Users/harshitnariya/PycharmProjects/Lyzr-new/auto_tweet/png-clipart-icon-logo-twitter-logo-twitter-logo-blue-social-media-thumbnail.png", width=150)  # Replace with the correct path for the banner image
 
 # Set up two columns for input and output areas
 col1, col2 = st.columns([1, 1])  # Adjust the ratio to match the design in the image

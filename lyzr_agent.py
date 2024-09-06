@@ -8,7 +8,7 @@ LYZR_URL = os.getenv("LYZR_URL")
 
 class LyzrAgent:
     def __init__(self, api_key, llm_api_key):
-        self.url = "https://agent.api.lyzr.app/v2/"
+        self.url = str(LYZR_URL)
         self.headers = {
             "accept": "application/json",
             "x-api-key": api_key
